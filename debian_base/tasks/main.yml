@@ -1,0 +1,9 @@
+---
+- name: Update and upgrade packages
+  ansible.builtin.import_tasks: updates.yml
+
+- name: Configure unattended-upgrades
+  ansible.builtin.import_tasks: unattended_upgrades.yml
+
+- name: Harden SSH configuration
+  ansible.builtin.import_tasks: ssh_hardening.yml

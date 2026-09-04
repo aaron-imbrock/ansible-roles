@@ -1,0 +1,11 @@
+# Managed by Ansible (base role) — do not edit by hand.
+Unattended-Upgrade::Origins-Pattern {
+    "origin=Debian,codename=${distro_codename},label=Debian";
+    "origin=Debian,codename=${distro_codename},label=Debian-Security";
+    "origin=Debian,codename=${distro_codename}-security,label=Debian-Security";
+};
+
+Unattended-Upgrade::Remove-Unused-Dependencies "true";
+Unattended-Upgrade::Automatic-Reboot "{{ base_unattended_upgrades_reboot }}";
+Unattended-Upgrade::Automatic-Reboot-WithUsers "{{ base_unattended_upgrades_reboot_with_users }}";
+Unattended-Upgrade::Automatic-Reboot-Time "{{ base_unattended_upgrades_reboot_time }}";

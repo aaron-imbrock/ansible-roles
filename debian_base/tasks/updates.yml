@@ -1,0 +1,6 @@
+---
+- name: Update apt cache and upgrade packages
+  ansible.builtin.apt:
+    update_cache: true
+    cache_valid_time: "{{ base_apt_cache_valid_time }}"
+    upgrade: "{{ base_apt_upgrade_type }}"

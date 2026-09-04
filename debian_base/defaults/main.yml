@@ -1,0 +1,16 @@
+#SPDX-License-Identifier: MIT-0
+---
+# defaults file for base
+
+# --- Package updates ---
+base_apt_upgrade_type: safe
+base_apt_cache_valid_time: 3600
+
+# --- unattended-upgrades ---
+base_unattended_upgrades_reboot: "true"
+base_unattended_upgrades_reboot_with_users: "true"
+base_unattended_upgrades_reboot_time: "04:00"
+
+# --- SSH hardening ---
+base_ssh_permit_root_login: "no"
+base_ssh_password_authentication: "no"
