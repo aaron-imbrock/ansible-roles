@@ -1,0 +1,8 @@
+---
+- name: Create shared overlay network for platform + app services
+  community.docker.docker_network:
+    name: "{{ swarm_network_name }}"
+    driver: "{{ swarm_network_driver }}"
+    attachable: "{{ swarm_network_attachable }}"
+    scope: swarm
+    state: present

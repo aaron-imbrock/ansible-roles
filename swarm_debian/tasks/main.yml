@@ -1,0 +1,6 @@
+---
+- name: Initialize Docker Swarm
+  ansible.builtin.import_tasks: init.yml
+
+- name: Create shared overlay network
+  ansible.builtin.import_tasks: network.yml

@@ -1,0 +1,11 @@
+#SPDX-License-Identifier: MIT-0
+---
+# defaults file for swarm
+
+# ansible_host DNS/IP variable in hosts.yml
+swarm_advertise_addr: "{{ ansible_host }}"
+
+swarm_network_name: proxy-net
+swarm_network_driver: overlay
+swarm_network_attachable: true
+swarm_apt_cache_valid_time: 3600

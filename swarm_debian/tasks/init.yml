@@ -1,0 +1,12 @@
+---
+- name: Install Docker SDK for Python (required by community.docker modules)
+  ansible.builtin.apt:
+    name: python3-docker
+    state: present
+    update_cache: true
+    cache_valid_time: "{{ swarm_apt_cache_valid_time }}"
+
+- name: Initialize Docker Swarm
+  community.docker.docker_swarm:
+    state: present
+    advertise_addr: "{{ swarm_advertise_addr }}"
