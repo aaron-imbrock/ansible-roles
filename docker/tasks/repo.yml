@@ -1,0 +1,18 @@
+---
+- name: Install prerequisites for adding a signed apt repo
+  ansible.builtin.apt:
+    name:
+      - ca-certificates
+      - curl
+    state: present
+
+- name: Add Docker apt repository
+  ansible.builtin.deb822_repository:
+    name: docker
+    types: [deb]
+    uris: "{{ docker_apt_repo_uri }}"
+    suites: "{{ ansible_facts['distribution_release'] }}"
+    components: [stable]
+    signed_by: "{{ docker_apt_gpg_key_url }}"
+    state: present
+    enabled: true

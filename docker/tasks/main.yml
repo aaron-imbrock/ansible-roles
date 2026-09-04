@@ -1,0 +1,6 @@
+---
+- name: Add Docker apt repository
+  ansible.builtin.import_tasks: repo.yml
+
+- name: Install and configure Docker
+  ansible.builtin.import_tasks: install.yml
