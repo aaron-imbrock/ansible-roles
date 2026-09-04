@@ -1,6 +1,9 @@
 Base
 ====
-Baseline host preparation: apt package updates, automatic security updates via unattended-upgrades, and SSH hardening (disables root login and password authentication).
+Baseline host preparation: 
+- apt package updates
+- automatic security updates via unattended-upgrades,
+- and SSH hardening (disables root login and password authentication).
 
 Requirements
 ------------

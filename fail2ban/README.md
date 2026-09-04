@@ -1,38 +1,33 @@
-Role Name
-=========
-
-A brief description of the role goes here.
+Fail2ban
+========
+Installs and configures fail2ban with an SSH jail to block brute-force login attempts.
 
 Requirements
 ------------
-
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+None beyond ansible-core. Uses only `ansible.builtin` modules.
 
 Role Variables
 --------------
+Defined in `defaults/main.yml`:
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+- `fail2ban_ssh_maxretry` (default: `5`) — failed attempts before a ban.
+- `fail2ban_ssh_bantime` (default: `1h`) — ban duration.
+- `fail2ban_apt_cache_valid_time` (default: `3600`) — seconds apt cache is considered fresh before re-syncing. Kept independent from the `base` role's equivalent variable so this role has no cross-role dependency and can be applied standalone.
 
 Dependencies
 ------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+None.
 
 Example Playbook
 ----------------
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - fail2ban
 
 License
 -------
-
-BSD
+MIT-0
 
 Author Information
 ------------------
-
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Internal role — no external contact information.
