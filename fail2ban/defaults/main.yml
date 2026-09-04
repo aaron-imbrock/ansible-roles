@@ -1,0 +1,4 @@
+---
+fail2ban_ssh_maxretry: 5
+fail2ban_ssh_bantime: 1h
+fail2ban_apt_cache_valid_time: 3600

@@ -1,0 +1,6 @@
+# Managed by Ansible (fail2ban role) — do not edit by hand.
+[sshd]
+enabled = true
+port = ssh
+maxretry = {{ fail2ban_ssh_maxretry }}
+bantime = {{ fail2ban_ssh_bantime }}
